@@ -1,4 +1,3 @@
-from time import sleep
 from random import randint, choice
 from selenium import webdriver
 from selenium.webdriver.common.by import By

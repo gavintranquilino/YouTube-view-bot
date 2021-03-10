@@ -1,4 +1,5 @@
 from json import load
+from time import sleep
 import driver
 
 def get_config():
