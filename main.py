@@ -6,7 +6,7 @@ def get_config():
     with open('settings.json', 'r') as file:
         data = load(file)
     
-    return data["website"], data["tab_amount"], data["watch_time"], data["view_cycles"]
+    return data["website"], data["tab_amount"], data["watch_time"], data["view_cycles"], data["browser"]
 
 def init_tabs(website, tab_amount):
     for _ in range(tab_amount):
@@ -32,8 +32,8 @@ def refresh_all(website, tab_amount):
 
 def main():
     print('Initilization')
-    website, tab_amount, watch_time, view_cycles = get_config()
-    website = driver.Bot(website)
+    website, tab_amount, watch_time, view_cycles, browser = get_config()
+    website = driver.Bot(website, browser)
 
     print('Opening new tabs')
     init_tabs(website, tab_amount)

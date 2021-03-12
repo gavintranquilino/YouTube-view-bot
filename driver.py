@@ -3,13 +3,47 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+
+from webdriver_manager.chrome import ChromeDriverManager 
 from webdriver_manager.firefox import GeckoDriverManager
+from webdriver_manager.opera import OperaDriverManager 
+from webdriver_manager.microsoft import IEDriverManager, EdgeChromiumDriverManager
+
+def get_driver(browser):
+    """Get the driver"""
+
+    # Browser name aliases
+    chrome = ('chrome', 'google', 'google chrome', 'googlechrome', 'google-chrome', 'google_chrome')
+    firefox = ('firefox', 'ff', 'mozilla', 'gecko', 'geckodriver', 'fire fox', 'fire_fox', 'fire-fox')
+    opera = ('opera', 'opera gx', 'operagx', 'opera_gx', 'opera-gx')
+    explorer = ('explorer', 'ie', 'internet explorer', 'internet-explorer', 'internet_explorer')
+    edge = ('edge', 'microsoft edge', 'microsoft_edge', 'microsoft-edge')
+
+    # Download browser binaries according to settings.json
+    if browser.lower() in chrome:
+        return webdriver.Chrome(ChromeDriverManager().install())
+
+    elif browser.lower() in firefox:
+        return webdriver.Firefox(executable_path=GeckoDriverManager().install())
+
+    elif browser.lower() in opera:
+        return webdriver.Opera(OperaDriverManager().install())
+
+    elif browser.lower() in explorer:
+        return webdriver.Ie(IEDriverManager().install())
+
+    elif browser.lower() in edge:
+        return webdriver.Edge(executable_path=EdgeChromiumDriverManager().install())
+
+    else:
+        raise RuntimeError('Browser not found {}'.format(browser.lower()))
+
 
 class Bot(object):
     """Handle connections"""
 
-    def __init__(self, website):
-        self.driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+    def __init__(self, website, browser):
+        self.driver = get_driver(browser)
         self.website = website  
         self.wait = WebDriverWait(self.driver, 3)
         self.presence = EC.presence_of_element_located
