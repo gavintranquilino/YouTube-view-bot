@@ -2,3 +2,4 @@ venv/
 .vscode/
 geckodriver.log
 __pycache__/
+default.json

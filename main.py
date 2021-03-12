@@ -3,8 +3,13 @@ from time import sleep
 import driver
 
 def get_config():
-    with open('settings.json', 'r') as file:
-        data = load(file)
+    try:
+        with open('default.json', 'r') as file:
+            data = load(file)
+
+    except FileNotFoundError:
+        with open('config.json', 'r') as file:
+            data = load(file)
     
     return data["website"], data["tab_amount"], data["watch_time"], data["view_cycles"], data["browser"]
 
@@ -44,6 +49,7 @@ def main():
     print('Cycle start')
     print('Playing videos')
     play_video(website, tab_amount)
+
     for i in range(view_cycles):
         # Cycle the amount of refreshes
         sleep(watch_time) # Watch the video for n amount of times
