@@ -13,7 +13,7 @@ This program was built in Python 3.9.0, but should work in Python 3.9.0+
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the repository.
 
 ```bash
-pip install https://github.com/GuhBean/YouTube-view-bot.git
+pip install https://github.com/gavintranquilino/YouTube-view-bot.git
 ```
 
 Alternatively, download this project as a **.zip** file, and extract into your device.
