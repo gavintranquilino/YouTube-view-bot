@@ -54,8 +54,8 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Please make sure to update tests as appropriate.
 
-See [CONTRIBUTING.md](https://github.com/GuhBean/YouTube-view-bot/blob/master/CONTRIBUTING.md) file.
+See [CONTRIBUTING.md](https://github.com/gavintranquilino/YouTube-view-bot/blob/master/CONTRIBUTING.md) file.
 
 ## License
-See [LICENSE](https://github.com/GuhBean/YouTube-view-bot/blob/master/LICENSE) file.
+See [LICENSE](https://github.com/gavintranquilino/YouTube-view-bot/blob/master/LICENSE) file.
 
