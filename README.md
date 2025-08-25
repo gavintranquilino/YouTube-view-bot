@@ -21,10 +21,10 @@ git clone https://github.com/gavintranquilino/YouTube-view-bot.git .
 Alternatively, download this project as a **.zip** file, and extract into your device.
 
 ### Downloading the dependencies
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the dependencies listed in **requirements.txt**.
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the dependencies.
 
 ```bash
-pip install -r requirements.txt
+pip install webdriver-manager selenium requests
 ```
 
 # Configuration
