@@ -9,11 +9,13 @@ Download the latest [Python](https://www.python.org/downloads/) release.
 
 This program was built in Python 3.9.0, but should work in Python 3.9.0+
 
-### Downloading the GitHub repository
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the repository.
+### Downloading/Cloning the GitHub repository
+Use [git](https://git-scm.com/) to install the repository.
+
+In the folder you want to install the YouTube-view-bot, run the following command to clone this repository to your local system.
 
 ```bash
-pip install https://github.com/gavintranquilino/YouTube-view-bot.git
+git clone https://github.com/gavintranquilino/YouTube-view-bot.git .
 ```
 
 Alternatively, download this project as a **.zip** file, and extract into your device.
