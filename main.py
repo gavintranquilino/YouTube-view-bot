@@ -18,7 +18,8 @@ def get_config():
 def init_tabs(website, tab_amount):
     """Opens tabs according to tab amount set in config.json"""
 
-    for _ in range(tab_amount):
+    # First tab already exists; only open the remaining tabs
+    for _ in range(max(tab_amount - 1, 0)):
         website.new_tab()
 
 def open_links(website, tab_amount):
@@ -51,7 +52,7 @@ def main():
     print('Initilization')
     config = get_config()
 
-    website = driver.Bot(config['website'], config['browser'])
+    website = driver.Bot(config['website'], config['browser'], config['tab_amount'])
 
     print('Opening new tabs')
     init_tabs(website, config['tab_amount'])
