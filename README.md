@@ -34,7 +34,7 @@ pip install webdriver-manager selenium requests
 
 ```json
 {
-    "website": "YOUR VIDEO", 
+    "website": "YOUR VIDEO",
     "tab_amount": 3,
     "watch_time": 35,
     "view_cycles": 5,
